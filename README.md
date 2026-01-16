@@ -1,4 +1,5 @@
-# Sounds through time: How has music changed since the 1960s?
+# Sounds through the decades: How has modern music changed across time?
+
 IJC445 module report code.
 
 The code can be used to explore how the features of popular music have evolved over time, since the 1960s. It will create a composite visualisation consisting of four separate visualisations.
