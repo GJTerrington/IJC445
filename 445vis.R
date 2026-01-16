@@ -198,8 +198,10 @@ spider_scaled <- spider_data %>%
 spider_plot_data <- spider_scaled %>%
   select(-genre_group)
 
+# creating a data frame
 spider_plot_data <- as.data.frame(spider_plot_data)
 
+# scaling the features
 max_min <- rbind(
   setNames(as.data.frame(matrix(2, nrow = 1, ncol = ncol(spider_plot_data))),
            colnames(spider_plot_data)),
@@ -211,8 +213,6 @@ spider_plot_data <- rbind(max_min, spider_plot_data)
 
 rownames(spider_plot_data) <- c("max", "min", spider_scaled$genre_group)
 
-
-
 genre_names <- rownames(spider_plot_data)[-(1:2)]
 
 genre_names <- spider_scaled$genre_group
@@ -220,7 +220,7 @@ genre_names <- spider_scaled$genre_group
 nrow(spider_plot_data)
 length(spider_scaled$genre_group)
 
-
+# using a rainbow colour scheme
 colors <-rainbow(5)
 
   radarchart(
@@ -237,6 +237,7 @@ colors <-rainbow(5)
     title = "Acoustic Features Across the Top Five Genres \n using Standardised values (0-1)",
     )
 
+# creating the legend
   legend(
     "topright",
     legend = spider_scaled$genre_group,
